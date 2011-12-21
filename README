@@ -1,3 +1,2 @@
-This is a very simple HTTP server that will print out request headers and payload for 
-debugging purposes only. Can be used for testing anything that does HTTP requests.
-
+This is a very simple HTTP server that will dump out request headers and payload for 
+debugging purposes. Can be used for testing anything that does HTTP requests.

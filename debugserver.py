@@ -4,7 +4,7 @@ import SimpleHTTPServer
 import SocketServer
 import cgi
 
-# Listen port
+# Set the listen port
 PORT = 9999
 
 class ServerHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
@@ -12,7 +12,7 @@ class ServerHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     def do_GET(self):
         print("--------------------")
         print(self.headers)
-        SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
+        print("--------------------")
 
     def do_POST(self):
         print("--------------------")
@@ -21,11 +21,10 @@ class ServerHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             environ={'REQUEST_METHOD':'POST',
                      'CONTENT_TYPE':self.headers['Content-Type'],
                     })
-        print str(form)
         if form.list:
           for item in form.list:
-            logging.error(item)
-        SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
+            print str(item.name), " = ", str(item.value)
+        print("--------------------")
 
 ## Start the server
 handler = ServerHandler

@@ -1,2 +1,0 @@
-This is a very simple HTTP server that will dump out request headers and payload for 
-debugging purposes. Can be used for testing anything that does HTTP requests.
